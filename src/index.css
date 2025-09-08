@@ -2,39 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* EcoLearn Environmental Education Platform Design System
+All colors, gradients, fonts, and eco-friendly styles defined here.
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Eco-friendly color palette */
+    --background: 155 25% 97%;
+    --foreground: 140 60% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 140 60% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 140 60% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Emerald Green */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 160 60% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Forest Green */
+    --secondary: 140 60% 30%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Sage Green */
+    --muted: 155 20% 90%;
+    --muted-foreground: 140 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Mint */
+    --accent: 160 30% 85%;
+    --accent-foreground: 140 60% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success - Bright Green */
+    --success: 120 70% 50%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning - Earth Orange */
+    --warning: 35 90% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 155 20% 85%;
+    --input: 155 20% 92%;
+    --ring: 160 84% 39%;
+
+    /* Earth tones */
+    --earth: 25 30% 45%;
+    --earth-foreground: 0 0% 100%;
+
+    /* Nature gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--earth)), hsl(var(--warning)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--primary-glow)));
+
+    /* Eco shadows */
+    --shadow-eco: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-nature: 0 5px 20px -5px hsl(var(--secondary) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+
+    /* Animations */
+    --transition-eco: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce-eco: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -56,41 +90,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with nature theme */
+    --background: 140 30% 8%;
+    --foreground: 155 25% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 140 25% 10%;
+    --card-foreground: 155 25% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 140 25% 10%;
+    --popover-foreground: 155 25% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 160 60% 55%;
+    --primary-foreground: 140 30% 8%;
+    --primary-glow: 160 40% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 140 40% 20%;
+    --secondary-foreground: 155 25% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 140 20% 15%;
+    --muted-foreground: 155 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 20% 20%;
+    --accent-foreground: 155 25% 92%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 120 60% 45%;
+    --success-foreground: 140 30% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --warning: 35 80% 55%;
+    --warning-foreground: 140 30% 8%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 155 25% 92%;
+
+    --border: 140 20% 20%;
+    --input: 140 20% 15%;
+    --ring: 160 60% 55%;
+
+    --earth: 25 25% 35%;
+    --earth-foreground: 155 25% 92%;
   }
 }
 
@@ -101,5 +138,115 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Eco-themed utility classes */
+  .eco-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .eco-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .eco-gradient-earth {
+    background: var(--gradient-earth);
+  }
+  
+  .eco-gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .eco-shadow {
+    box-shadow: var(--shadow-eco);
+  }
+  
+  .nature-shadow {
+    box-shadow: var(--shadow-nature);
+  }
+  
+  .glow-shadow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .eco-transition {
+    transition: var(--transition-eco);
+  }
+  
+  /* Achievement pulse animation */
+  .achievement-pulse {
+    animation: achievement-glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Badge unlock animation */
+  .badge-unlock {
+    animation: badge-bounce 0.6s var(--bounce-eco);
+  }
+  
+  /* Point scoring animation */
+  .points-earned {
+    animation: points-float 1s ease-out forwards;
+  }
+}
+
+@layer base {
+  @keyframes achievement-glow {
+    0% {
+      box-shadow: 0 0 20px hsl(var(--success) / 0.3);
+    }
+    100% {
+      box-shadow: 0 0 30px hsl(var(--success) / 0.6);
+    }
+  }
+  
+  @keyframes badge-bounce {
+    0% {
+      transform: scale(0) rotate(-180deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2) rotate(-90deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes points-float {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-40px) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes eco-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes leaf-sway {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(2deg);
+    }
+    75% {
+      transform: rotate(-2deg);
+    }
   }
 }
