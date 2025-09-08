@@ -19,16 +19,24 @@ import {
   Droplets,
   Wind,
   Recycle,
-  Sun
+  Sun,
+  Gift,
+  Flame
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ecoBadges from "@/assets/eco-badges.png";
+import BadgeUnlockCeremony from "@/components/gamification/BadgeUnlockCeremony";
+import StreakCounter from "@/components/gamification/StreakCounter";
+import RewardWheel from "@/components/gamification/RewardWheel";
+import TeamFormation from "@/components/gamification/TeamFormation";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [currentPoints, setCurrentPoints] = useState(1250);
   const [currentLevel, setCurrentLevel] = useState("Intermediate");
   const [nextLevelPoints, setNextLevelPoints] = useState(500);
+  const [showBadgeCeremony, setShowBadgeCeremony] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("overview");
 
   const studentStats = {
     name: "Arjun Sharma",
@@ -292,37 +300,66 @@ const Dashboard = () => {
 
           {/* Right Column */}
           <div className="space-y-6">
-            {/* Recent Badges */}
+            {/* Streak Counter */}
+            <StreakCounter 
+              currentStreak={12}
+              bestStreak={18}
+              weeklyGoal={7}
+              monthlyGoal={30}
+              streakRewards={[
+                { day: 7, reward: "50 bonus points", claimed: true },
+                { day: 14, reward: "Tree Protector badge", claimed: true },
+                { day: 21, reward: "100 bonus points", claimed: false },
+                { day: 30, reward: "Streak Master title", claimed: false }
+              ]}
+            />
+
+            {/* Daily Reward Wheel */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Award className="h-5 w-5 text-warning" />
-                  Recent Badges
+                  <Gift className="h-5 w-5 text-primary" />
+                  Daily Rewards
                 </CardTitle>
-                <CardDescription>
-                  Your latest achievements
-                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {recentBadges.map((badge, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2">
-                    <div className={`h-10 w-10 rounded-full bg-gradient-to-br from-primary/20 to-success/20 flex items-center justify-center achievement-pulse`}>
-                      <badge.icon className={`h-5 w-5 ${badge.color}`} />
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-medium">{badge.name}</div>
-                      <div className="text-xs text-muted-foreground">{badge.earned}</div>
-                    </div>
+              <CardContent>
+                <div className="text-center space-y-3">
+                  <div className="text-sm text-muted-foreground">
+                    Spin the wheel for bonus rewards!
                   </div>
-                ))}
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full"
-                  onClick={() => navigate('/profile')}
-                >
-                  View All Badges
-                </Button>
+                  <Button 
+                    className="w-full eco-gradient"
+                    onClick={() => setSelectedTab("rewards")}
+                  >
+                    <Gift className="h-4 w-4 mr-2" />
+                    Open Reward Wheel
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Team Invitation */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Users className="h-5 w-5 text-primary" />
+                  Join a Team
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center space-y-3">
+                  <div className="text-sm text-muted-foreground">
+                    Team up for group challenges!
+                  </div>
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={() => setSelectedTab("teams")}
+                  >
+                    <Users className="h-4 w-4 mr-2" />
+                    Explore Teams
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
