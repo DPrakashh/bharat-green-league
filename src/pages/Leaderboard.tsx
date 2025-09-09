@@ -113,7 +113,7 @@ const Leaderboard = () => {
   const topStudents: Student[] = [
     {
       id: 1,
-      name: "Arjun Sharma",
+      name: "Divya Prakash",
       school: "Delhi Public School",
       points: 2340,
       rank: 1,

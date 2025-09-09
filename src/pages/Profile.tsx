@@ -37,7 +37,7 @@ const Profile = () => {
   const [selectedTab, setSelectedTab] = useState("overview");
 
   const studentProfile = {
-    name: "Arjun Sharma",
+    name: "Divya Prakash",
     school: "Delhi Public School, R.K. Puram",
     grade: "Class 10-A",
     joinDate: "September 2024",

@@ -55,7 +55,7 @@ const TeamFormation = () => {
     members: [
       { id: 1, name: "Rajesh Kumar", level: "Expert", points: 2340, role: "leader" },
       { id: 2, name: "Priya Sharma", level: "Advanced", points: 1890, role: "member" },
-      { id: 3, name: "Arjun Patel", level: "Advanced", points: 1756, role: "member" },
+      { id: 3, name: "Divya Prakash", level: "Advanced", points: 1756, role: "member" },
       { id: 4, name: "Sneha Singh", level: "Intermediate", points: 1234, role: "member" }
     ],
     totalPoints: 7220,
@@ -299,7 +299,7 @@ const TeamFormation = () => {
                   <div className="space-y-3">
                     {[
                       { user: "Priya Sharma", action: "completed Water Conservation Quiz", points: 20, time: "2 hours ago" },
-                      { user: "Arjun Patel", action: "planted 5 trees for team challenge", points: 50, time: "5 hours ago" },
+                      { user: "Divya Prakash", action: "planted 5 trees for team challenge", points: 50, time: "5 hours ago" },
                       { user: "Sneha Singh", action: "earned Tree Protector badge", points: 100, time: "1 day ago" },
                       { user: "Team", action: "completed Community Clean-Up Drive", points: 200, time: "2 days ago" }
                     ].map((activity, index) => (

@@ -39,7 +39,7 @@ const Dashboard = () => {
   const [selectedTab, setSelectedTab] = useState("overview");
 
   const studentStats = {
-    name: "Arjun Sharma",
+    name: "Divya Prakash",
     school: "Delhi Public School",
     grade: "Class 10",
     rank: 15,
